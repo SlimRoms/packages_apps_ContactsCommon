@@ -152,8 +152,12 @@ public class AccountSelectionUtil {
 
     public static void doImport(Context context, int resId, AccountWithDataSet account) {
         switch (resId) {
-            case R.string.import_from_sim: {
-                doImportFromSim(context, account);
+            case R.string.manage_sim_contacts: {
+                doManageFromSim(context, account);
+                break;
+            }
+            case R.string.export_to_sim: {
+                doExportToSim(context);
                 break;
             }
             case R.string.import_from_sdcard: {
@@ -163,7 +167,25 @@ public class AccountSelectionUtil {
         }
     }
 
+    public static void doExportToSim(Context context) {
+        Intent importIntent = new Intent(Intent.ACTION_VIEW);
+        importIntent.setClassName("com.android.phone", "com.android.phone.ExportContactsToSim");
+        context.startActivity(importIntent);
+    }
+
     public static void doImportFromSim(Context context, AccountWithDataSet account) {
+        Intent importIntent = new Intent(Intent.ACTION_VIEW);
+        importIntent.setType("vnd.android.cursor.item/sim-contact");
+        if (account != null) {
+            importIntent.putExtra("account_name", account.name);
+            importIntent.putExtra("account_type", account.type);
+            importIntent.putExtra("data_set", account.dataSet);
+        }
+        importIntent.setClassName("com.android.phone", "com.android.phone.SimContacts");
+        context.startActivity(importIntent);
+    }
+
+    public static void doManageFromSim(Context context, AccountWithDataSet account) {
         Intent importIntent = new Intent(Intent.ACTION_VIEW);
         importIntent.setType("vnd.android.cursor.item/sim-contact");
         if (account != null) {
