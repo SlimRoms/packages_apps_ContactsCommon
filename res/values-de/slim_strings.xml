@@ -16,6 +16,6 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-  <string name="export_to_sim">Экспорт на SIM-карту</string>
-  <string name="manage_sim_contacts">Изменить контакты на SIM-карте</string>
+  <string name="export_to_sim">Auf SIM-Karte exportieren</string>
+  <string name="manage_sim_contacts">Kontakte auf SIM-Karte verwalten</string>
 </resources>
