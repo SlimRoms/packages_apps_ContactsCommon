@@ -51,6 +51,8 @@ import com.android.contacts.common.R;
 import com.android.contacts.common.format.TextHighlighter;
 import com.android.contacts.common.util.SearchUtil;
 import com.android.contacts.common.util.ViewUtil;
+import com.android.contacts.common.widget.CheckableImageView;
+import com.android.contacts.common.widget.CheckableQuickContactBadge;
 
 import com.google.common.collect.Lists;
 
@@ -150,8 +152,8 @@ public class ContactListItemView extends ViewGroup
 
     // The views inside the contact view
     private boolean mQuickContactEnabled = true;
-    private QuickContactBadge mQuickContact;
-    private ImageView mPhotoView;
+    private CheckableQuickContactBadge mQuickContact;
+    private CheckableImageView mPhotoView;
     private TextView mNameTextView;
     private TextView mPhoneticNameTextView;
     private TextView mLabelView;
@@ -752,7 +754,7 @@ public class ContactListItemView extends ViewGroup
             throw new IllegalStateException("QuickContact is disabled for this view");
         }
         if (mQuickContact == null) {
-            mQuickContact = new QuickContactBadge(getContext());
+            mQuickContact = new CheckableQuickContactBadge(getContext());
             mQuickContact.setOverlay(null);
             mQuickContact.setLayoutParams(getDefaultPhotoLayoutParams());
             if (mNameTextView != null) {
@@ -766,12 +768,21 @@ public class ContactListItemView extends ViewGroup
         return mQuickContact;
     }
 
+    public void setChecked(boolean checked, boolean animate) {
+        if (mQuickContact != null) {
+            mQuickContact.setChecked(checked, animate);
+        }
+        if (mPhotoView != null) {
+            mPhotoView.setChecked(checked, animate);
+        }
+    }
+
     /**
      * Returns the photo view, creating it if necessary.
      */
     public ImageView getPhotoView() {
         if (mPhotoView == null) {
-            mPhotoView = new ImageView(getContext());
+            mPhotoView = new CheckableImageView(getContext());
             mPhotoView.setLayoutParams(getDefaultPhotoLayoutParams());
             // Quick contact style used above will set a background - remove it
             mPhotoView.setBackground(null);
