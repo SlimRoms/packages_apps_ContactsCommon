@@ -41,7 +41,7 @@
     <color name="people_app_theme_color">#363636</color>
 
     <!-- Color of the theme of the Dialer app -->
-    <color name="dialtacts_theme_color">#0288d1</color>
+    <color name="dialtacts_theme_color">#606060</color>
 
     <!-- Color of image view placeholder. -->
     <color name="image_placeholder">#222222</color>
@@ -58,7 +58,7 @@
     <!--  Color of the status message for starred contacts in the People app -->
     <color name="people_contact_tile_status_color">#ffffff</color>
 
-    <color name="shortcut_overlay_text_background">#7f000000</color>
+    <color name="shortcut_overlay_text_background">#7fffffff</color>
 
     <color name="textColorIconOverlay">#fff</color>
     <color name="textColorIconOverlayShadow">#000</color>
@@ -120,18 +120,18 @@
 
     <!-- Background color of action bars. Ensure this stays in sync with packages/Telephony
          actionbar_background_color. -->
-    <color name="actionbar_background_color">#0fc6dc</color>
+    <color name="actionbar_background_color">#606060</color>
     <!-- Color for icons in the actionbar -->
     <color name="actionbar_icon_color">#ffffff</color>
     <!-- Darker version of the actionbar color. Used for the status bar and navigation bar colors. -->
-    <color name="actionbar_background_color_dark">#008aa1</color>
+    <color name="actionbar_background_color_dark">#606060</color>
 
     <color name="tab_ripple_color">@color/tab_accent_color</color>
     <color name="tab_accent_color">#ffffff</color>
     <color name="tab_selected_underline_color">@color/tab_accent_color</color>
 
     <!-- Color of the title to the Frequently Contacted section -->
-    <color name="frequently_contacted_title_color">@color/actionbar_background_color</color>
+    <color name="frequently_contacted_title_color">#ffffffff</color>
 
     <!-- Color of action bar text. Ensure this stays in sync with packages/Telephony
     phone_settings_actionbar_text_color-->
@@ -139,14 +139,14 @@
     <color name="actionbar_unselected_text_color">#a6ffffff</color>
 
     <!-- Text color of the search box text as entered by user  -->
-    <color name="searchbox_text_color">#000000</color>
+    <color name="searchbox_text_color">#ffffffff</color>
     <!-- Background color of the search box -->
-    <color name="searchbox_background_color">#ffffff</color>
+    <color name="searchbox_background_color">@android:color/black</color>
 
-    <color name="searchbox_hint_text_color">#737373</color>
+    <color name="searchbox_hint_text_color">#ffeeeeee</color>
     <color name="searchbox_icon_tint">@color/searchbox_hint_text_color</color>
 
-    <color name="search_shortcut_icon_color">@color/dialtacts_theme_color</color>
+    <color name="search_shortcut_icon_color">@color/searchbox_hint_text_color</color>
 
     <!-- Color of the background of the contact detail and editor pages -->
     <color name="background_primary">@*android:color/material_grey_850</color>
